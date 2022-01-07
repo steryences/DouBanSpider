@@ -34,9 +34,9 @@ def book_spider(book_tag):
         try:
             req = urllib2.Request(url, headers=hds[page_num%len(hds)])
             source_code = urllib2.urlopen(req).read()
-            plain_text=str(source_code)   
-        except (urllib2.HTTPError, urllib2.URLError), e:
-            print e
+            plain_text=str(source_code)
+        except (urllib2.HTTPError, urllib2.URLError) as e:
+            print(e)
             continue
   
         ##Previous Version, IP is easy to be Forbidden
